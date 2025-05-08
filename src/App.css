@@ -4,3 +4,6 @@
     min-height: 100vh;
 }
 
+.App[data-theme='dark'] {
+    background: var(--gradient-dark);
+}
