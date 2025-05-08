@@ -1,9 +1,7 @@
-import {useState} from "react";
 import './Header.css'
 
 
-export default function Header() {
-    const [theme, setTheme] = useState('light')
+export default function Header({theme, setTheme}) {
 
     return (
         <div className="header">
