@@ -76,3 +76,42 @@
     flex-direction: column;
     gap: var(--spacing-100);
 }
+
+/* dark theme */
+[data-theme='dark'] .card {
+    & {
+        box-shadow: none;
+        border: 1px solid var(--color-neutral-600);
+        background-color: var(--color-neutral-800);
+    }
+
+    & .name {
+        color: var(--color-neutral);
+    }
+
+    & .description {
+        color: var(--color-neutral-300);
+    }
+
+    & .card-action > button:first-child {
+        border: 1px solid var(--color-neutral-600);
+        color: var(--color-neutral);
+    }
+
+    & .toggle-button {
+        background-color: var(--color-neutral-600);
+    }
+
+    & .toggle-button::after {
+        background-color: var(--color-neutral);
+        box-shadow: 0 1px 3px 0 hsla(220, 29%, 5%, 10%), 0 1px 2px -1px hsla(227, 75%, 14%, 60%);
+    }
+
+    & .toggle-button.on {
+        background-color: var(--color-red-400);
+    }
+
+    & .toggle-button.on::after {
+        color: var(--color-neutral);
+    }
+}
