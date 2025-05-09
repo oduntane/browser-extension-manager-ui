@@ -9,6 +9,17 @@ export default function ExtensionList() {
     const [filter, setFilter] = useState('all')
     const [extensions, setExtensions] = useState(extensiondata);
 
+    const filteredExtensions = extensions.filter((extension) => {
+        switch (filter) {
+            case 'all':
+                return true
+            case 'active':
+                return extension.isActive
+            case 'inactive':
+                return !extension.isActive
+        }
+    })
+
     return (
         <div className="extension-list">
             <div className="head">
@@ -21,7 +32,7 @@ export default function ExtensionList() {
             </div>
             <div className="extensions">
                 {
-                    extensions.map((extension) => {
+                    filteredExtensions.map((extension) => {
                         return (
                             <ExtensionCard {...extension}/>
                         )
