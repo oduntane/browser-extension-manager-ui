@@ -2,6 +2,7 @@
     background: var(--gradient-light);
     background-repeat: no-repeat;
     min-height: 100vh;
+    padding-block-start: clamp(20px, 5.3vw, 40px);
 }
 
 .App[data-theme='dark'] {
