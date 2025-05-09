@@ -20,6 +20,24 @@ export default function ExtensionList() {
         }
     })
 
+    function handleRemove(name) {
+        let newState = extensions.filter((extension) => {
+            return extension.name !== name
+        })
+
+        setExtensions(newState)
+    }
+
+    function handleCardState(name) {
+        let newState = extensions.map((extension) => {
+            if (extension.name === name) {
+                extension.isActive = !extension.isActive
+            }
+            return extension
+        })
+        setExtensions(newState)
+    }
+
     return (
         <div className="extension-list">
             <div className="head">
@@ -34,7 +52,7 @@ export default function ExtensionList() {
                 {
                     filteredExtensions.map((extension) => {
                         return (
-                            <ExtensionCard {...extension}/>
+                            <ExtensionCard onRemove={handleRemove} changeState={handleCardState} {...extension}/>
                         )
                     })
                 }

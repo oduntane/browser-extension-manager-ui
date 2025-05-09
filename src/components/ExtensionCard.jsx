@@ -1,6 +1,6 @@
 import './ExtensionCard.css'
 
-export default function ExtensionCard({logo, name, description, isActive}) {
+export default function ExtensionCard({logo, name, description, isActive, onRemove, changeState}) {
     return (
         <div className="card">
             <div className="card-body">
@@ -11,18 +11,11 @@ export default function ExtensionCard({logo, name, description, isActive}) {
                 </div>
             </div>
             <div className="card-action">
-                <button className="text-6">Remove</button>
-                <Toggle state={isActive}/>
+                <button className="text-6" onClick={() => onRemove(name)}>Remove</button>
+                <button className={`toggle-button ${isActive && 'on'}`} onClick={() => changeState(name)}>
+                </button>
             </div>
         </div>
     )
 }
 
-function Toggle({state}) {
-
-    return (
-        <button className={`toggle-button ${state && 'on'}`}>
-
-        </button>
-    )
-}
