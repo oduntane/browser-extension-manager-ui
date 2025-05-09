@@ -1,0 +1,55 @@
+
+.extension-list {
+    width: clamp(343px, 91.5%, 1170px);
+    margin-inline: auto;
+    margin-block: clamp(40px, 10vw, 60px) 64px;
+    container-name: head;
+    container-type: inline-size;
+}
+
+.extension-list h1 {
+    text-align: center;
+}
+
+.extension-list .head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--spacing-300);
+    align-items: center;
+
+
+}
+
+.extension-list .filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-150);
+}
+
+.extension-list .head button {
+    color: var(--color-neutral-900);
+    padding: var(--spacing-100) var(--spacing-250) var(--spacing-125);
+    border-radius: var(--radius-full);
+    background-color: var(--color-neutral);
+    border: inset 1px solid var(--color-neutral-200);
+    box-shadow: 0 1px 2px #B8C4D7;
+    text-align: center;
+}
+
+.extension-list .head button.selected {
+    color: var(--color-neutral);
+    background-color: var(--color-red-700);
+    border: none;
+    box-shadow: none;
+}
+
+@media screen and (min-width: 376px) {
+    @container head (min-width: 600px) {
+        .extension-list .head {
+            gap: unset;
+            flex-direction: row;
+        }
+    }
+}
