@@ -1,0 +1,78 @@
+.card {
+    padding: var(--spacing-250);
+    background-color: var(--color-neutral);
+    border: inset 1px solid var(--color-neutral-200);
+    box-shadow: 0 2px 2px 0 #C2CEE1, 0 1px 5px 1px hsla(217, 34%, 82%, 22%);
+    border-radius: var(--radius-20);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .logo {
+    width: 60px;
+    aspect-ratio: 1/1;
+}
+
+.card .name {
+    color: var(--color-neutral-900);
+}
+
+.card .description {
+    color: var(--color-neutral-600);
+}
+
+.card-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-action button:first-child {
+    padding: var(--spacing-100) var(--spacing-200);
+    border-radius: var(--radius-full);
+    border:  1px solid var(--color-neutral-300);
+    background-color: transparent;
+}
+
+.toggle-button {
+    width: 36px;
+    height: 20px;
+    background-color: var(--color-neutral-300);
+    border-radius: var(--radius-full);
+    padding: 2px;
+}
+
+.toggle-button::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-neutral);
+    display: block;
+    border-radius: var(--radius-full);
+    box-shadow: 0 1px 3px 0 hsla(220, 29%, 5%, 15%), 0 1px 2px -1px hsla(220, 29%, 5%, 15%);
+}
+
+.toggle-button.on {
+    background-color: var(--color-red-700);
+}
+
+.toggle-button.on::after {
+    margin-inline: auto 0;
+    box-shadow: 0 1px 3px 0 hsla(220, 29%, 5%, 30%), 0 1px 2px -1px hsla(220, 29%, 5%, 30%);
+}
+
+.card-body {
+    display: flex;
+    gap: var(--spacing-200);
+    align-items: flex-start;
+}
+
+.card-body div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+}
